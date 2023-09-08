@@ -86,4 +86,20 @@ public class OrderIT {
         assertThat(createdOrder.getId()).isEqualTo(3L);
         assertThat(createdOrder.getCustomerName()).isEqualTo("Tester");
     }
+
+    @Test
+    public void delete_orders() throws Exception {
+
+        // ARRANGE
+        final List<Order> orders = orderRepository.findAll();
+
+        // ACT
+        for (Order order : orders) {
+            mockMvc.perform(MockMvcRequestBuilders.delete("/orders/order/" + order.getId()))
+                    .andExpect(MockMvcResultMatchers.status().is(HttpStatus.OK.value()));
+        }
+
+        // ASSERT
+        assertThat(orderRepository.findAll()).isEmpty();
+    }
 }
