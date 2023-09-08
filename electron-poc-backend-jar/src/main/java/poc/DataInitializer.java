@@ -17,7 +17,7 @@ class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        if(orderRepository.findAll().isEmpty()) {
+        if (orderRepository.findAll().isEmpty()) {
             loadInitialData();
         }
     }

@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import poc.dto.Order;
 import poc.repo.OrderRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,7 +13,7 @@ public class OrderService {
     @Autowired
     private OrderRepository orderRepository;
 
-    public List<Order> getAllOrders(){
+    public List<Order> getAllOrders() {
         return orderRepository.findAll();
     }
 

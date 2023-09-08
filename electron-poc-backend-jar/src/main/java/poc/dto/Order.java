@@ -9,73 +9,73 @@ import java.util.Date;
 @Table(name = "orders")
 public class Order {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private long id;
-	
-	@Column(name = "price_per_unit")
-	private BigDecimal pricePerUnit;
-	
-	@Column(name = "amount")
-	private int amount;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private long id;
 
-	@Column(name = "item_name")
-	private String itemName;
+    @Column(name = "price_per_unit")
+    private BigDecimal pricePerUnit;
 
-	@Column(name = "customer_name")
-	private String customerName;
+    @Column(name = "amount")
+    private int amount;
 
-	@Column(name = "creation_timestamp")
-	@Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "item_name")
+    private String itemName;
 
-	private Date creationDate;
+    @Column(name = "customer_name")
+    private String customerName;
 
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "creation_timestamp")
+    @Temporal(TemporalType.TIMESTAMP)
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    private Date creationDate;
 
-	public BigDecimal getPricePerUnit() {
-		return pricePerUnit;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setPricePerUnit(BigDecimal pricePerUnit) {
-		this.pricePerUnit = pricePerUnit;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public int getAmount() {
-		return amount;
-	}
+    public BigDecimal getPricePerUnit() {
+        return pricePerUnit;
+    }
 
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
+    public void setPricePerUnit(BigDecimal pricePerUnit) {
+        this.pricePerUnit = pricePerUnit;
+    }
 
-	public String getItemName() {
-		return itemName;
-	}
+    public int getAmount() {
+        return amount;
+    }
 
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
-	}
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 
-	public String getCustomerName() {
-		return customerName;
-	}
+    public String getItemName() {
+        return itemName;
+    }
 
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
 
-	public Date getCreationDate() {
-		return creationDate;
-	}
+    public String getCustomerName() {
+        return customerName;
+    }
 
-	public void setCreationDate(Date creationDate) {
-		this.creationDate = creationDate;
-	}
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
 }

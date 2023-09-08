@@ -57,7 +57,7 @@ public class OrderIT {
         });
 
         assertThat(orders).hasSize(5)
-                .satisfies(orderList -> assertThat(orderList.stream().map(Order::getId).toList()).contains(3L,4L,5L));
+                .satisfies(orderList -> assertThat(orderList.stream().map(Order::getId).toList()).contains(3L, 4L, 5L));
     }
 
     @Test
@@ -72,9 +72,9 @@ public class OrderIT {
 
         // ACT
         mockMvc.perform(MockMvcRequestBuilders.post("/orders/order")
-                        .content(objectMapper.writeValueAsString(order))
-                        .contentType(MediaType.APPLICATION_JSON)
-                ).andExpect(MockMvcResultMatchers.status().is(HttpStatus.CREATED.value()));
+                .content(objectMapper.writeValueAsString(order))
+                .contentType(MediaType.APPLICATION_JSON)
+        ).andExpect(MockMvcResultMatchers.status().is(HttpStatus.CREATED.value()));
 
         // ASSERT
         final List<Order> orderList = orderRepository.findAll();
