@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import poc.dto.Order;
 import poc.service.OrderService;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -24,6 +25,7 @@ public class OrderController {
 
     @PostMapping(BASE_URL + "/order")
     public ResponseEntity<String> addOrder(@RequestBody final Order order) {
+        order.setCreationDate(new Date());
         orderService.addOrder(order);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

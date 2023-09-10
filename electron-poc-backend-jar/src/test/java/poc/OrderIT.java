@@ -17,7 +17,6 @@ import poc.dto.Order;
 import poc.repo.OrderRepository;
 
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -66,7 +65,6 @@ public class OrderIT {
         // ARRANGE
         final Order order = new Order();
         order.setAmount(500);
-        order.setCreationDate(new Date());
         order.setCustomerName("Tester");
         order.setPricePerUnit(BigDecimal.valueOf(19.99));
 
