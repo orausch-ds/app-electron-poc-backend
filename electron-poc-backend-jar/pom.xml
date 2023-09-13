@@ -49,37 +49,38 @@
             <artifactId>assertj-core</artifactId>
             <version>${version.assertJ}</version>
         </dependency>
+
+        <!-- Extras-->
+        <dependency>
+            <groupId>jakarta.enterprise</groupId>
+            <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            <version>4.0.1</version>
+        </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${version.spring-boot}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jlink-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <configuration>
-                            <buildDirectory>${project.build.directory}</buildDirectory>
-                            <outputDirectory>${project.build.directory}/custom-jre</outputDirectory>
-                            <modulePaths>
-                                <modulePath>
-                                    ${project.build.directory}/${project.build.finalName}.jar
-                                </modulePath>
-                            </modulePaths>
-                        </configuration>
-                        <goals>
-                            <goal>jlink</goal>
-                        </goals>
-                        <phase>package</phase>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+    <!--    <build>-->
+    <!--        <plugins>-->
+
+    <!--            </plugin>-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-jlink-plugin</artifactId>-->
+    <!--                <extensions>true</extensions>-->
+    <!--                <version>3.1.0</version>-->
+    <!--                <executions>-->
+    <!--                    <execution>-->
+    <!--                        <phase>package</phase>-->
+    <!--                        <configuration>-->
+    <!--                            <compress>2</compress>-->
+    <!--                            <noManPages>true</noManPages>-->
+    <!--                            <noHeaderFiles>true</noHeaderFiles>-->
+    <!--                        </configuration>-->
+    <!--                        <goals>-->
+    <!--                            <goal>jlink</goal>-->
+    <!--                        </goals>-->
+    <!--                    </execution>-->
+    <!--                </executions>-->
+    <!--            </plugin>-->
+    <!--        </plugins>-->
+    <!--    </build>-->
 </project>

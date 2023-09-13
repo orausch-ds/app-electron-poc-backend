@@ -16,6 +16,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>electron-poc-backend-jar</module>
+        <module>mod-jlink</module>
     </modules>
 
     <properties>
@@ -26,5 +27,19 @@
         <version.assertJ>3.24.2</version.assertJ>
         <version.h2>2.2.222</version.h2>
     </properties>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jlink-plugin</artifactId>
+                <extensions>true</extensions>
+                <version>3.1.0</version>
+                <configuration>
+                    <compress>2</compress>
+                    <noManPages>true</noManPages>
+                    <noHeaderFiles>true</noHeaderFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
